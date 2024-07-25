@@ -44,8 +44,8 @@ public:
         merge(ini, fin, medio, nuevoOrden, nums);
     }
     void merge(int ini, int fin, int medio, vector<int>& nuevoOrden, vector<int>& nums){
-        int auxMadre1[medio - ini + 2]{}, auxMadre2[fin - medio + 1]{};
-        int jerarquia1[medio - ini + 2]{}, jerarquia2[fin - medio + 1]{};
+        int auxMadre1[medio - ini + 2], auxMadre2[fin - medio + 1];
+        int jerarquia1[medio - ini + 2], jerarquia2[fin - medio + 1];
         for(int i = ini; i <= medio; i++){
             auxMadre1[i-ini] = nuevoOrden[i];
             jerarquia1[i-ini] = nums[i];
@@ -64,12 +64,12 @@ public:
                 nuevoOrden[i] = auxMadre2[q];
                 nums[i] = jerarquia2[q];
                 q++;
-            }else if (auxMadre1[q] < auxMadre2[q]){
+            }else if (auxMadre1[p] < auxMadre2[q]){
                 nuevoOrden[i] = auxMadre1[p];
                 nums[i] = jerarquia1[p];
                 p++;
             }else{
-                if(auxMadre1[p] != INT_MAX || auxMadre2[p] == INT_MAX){
+                if(auxMadre1[p] != INT_MAX || auxMadre2[q] == INT_MAX){
                     nuevoOrden[i] = auxMadre1[p];
                     nums[i] = jerarquia1[p];
                     p++;
