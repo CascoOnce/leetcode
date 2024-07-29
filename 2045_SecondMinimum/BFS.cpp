@@ -23,6 +23,7 @@ public:
         }
         return BFS(listaAdyacencia, n, change, time);
     }
+private:
     int BFS(vector<vector<int>> listaAdyacencia ,int n, int change, int time){
         queue<pair<int, int>>cola;
         vector<int> dist1(n+1, -1), dist2(n+1, -1);
@@ -49,11 +50,14 @@ public:
     }
 };
 
-
-
 int main (void){
     Solution caso;
+    vector<vector<int>> edges;
     // Caso 1:
-
+    edges = {{1,2},{1,3},{1,4},{3,4},{4,5}};
+    cout << caso.secondMinimum(5, edges, 3, 5) << endl;
+    // Caso 2:
+    edges = {{1,2}};
+    cout << caso.secondMinimum(2, edges, 3, 2) << endl;
     return 0;
 }
