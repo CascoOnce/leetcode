@@ -9,20 +9,14 @@
     Caso 3:
     [1,2,3,2,2]
     */
-
-using System;
-
-
+    
 var sol = new Solution();
-int[] fruits1 = { 1, 2, 1, 2, 3 };
-int[] fruits2 = { 0, 1, 2, 2 };
-int[] fruits3 = { 1, 2, 3, 2, 2 };
-int[] fruits4 = { 3,3,3,1,2,1,1,2,3,3,4 };
+int[] fruits1 = { 1, 2, 1, 2, 3 }, fruits2 = { 0, 1, 2, 2 };
+int[] fruits3 = { 1, 2, 3, 2, 2 }, fruits4 = { 3,3,3,1,2,1,1,2,3,3,4 };
 Console.WriteLine(sol.TotalFruit(fruits1));
 Console.WriteLine(sol.TotalFruit(fruits2));
 Console.WriteLine(sol.TotalFruit(fruits3));
 Console.WriteLine(sol.TotalFruit(fruits4));
-// Console.WriteLine("Hola, mundo!");
 
 public class Solution
 {
@@ -47,7 +41,6 @@ public class Solution
             }
             best = Math.Max(best, right - left + 1);
         }
-        // Console.WriteLine();
         return best;
     }
 };
