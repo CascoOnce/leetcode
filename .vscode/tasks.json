@@ -22,6 +22,24 @@
             ],
             "group": "build",
             "detail": "g++.exe"
+        },
+        {
+            "label": "Run C# Script",
+            "type": "shell",
+            "command": "dotnet script",
+            "args": [
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
         }
     ]
 }
